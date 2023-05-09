@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "66e10081-990e-4b50-9e31-437f7285f268",
+		"name": "Credit Card Validator API",
+		"description": "This is a REST API for credit card validator.\n\nContact Support:\n Email: amanpreet.3579@gmail.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15954943"
+	},
+	"item": [
+		{
+			"name": "card",
+			"item": [
+				{
+					"name": "list all card",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/card",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card"
+							]
+						},
+						"description": "Get all valid cards present in the system |\n"
+					},
+					"response": [
+						{
+							"name": "search results matching criteria",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/card",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"card"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"number\": \"ad ea aliquip\"\n  },\n  {\n    \"number\": \"amet reprehenderit tempor deserunt\"\n  }\n]"
+						},
+						{
+							"name": "no card found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/card",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"card"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "adds a credit card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"number\": \"sunt minim reprehenderit laboris\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/card",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card"
+							]
+						},
+						"description": "Adds a card to the system"
+					},
+					"response": [
+						{
+							"name": "card created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"number\": \"sunt minim reprehenderit laboris\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/card",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"card"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "invalid input, object invalid",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"number\": \"sunt minim reprehenderit laboris\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/card",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"card"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "an existing item already exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"number\": \"sunt minim reprehenderit laboris\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/card",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"card"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "get card by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/card/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"card",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "elit",
+									"description": "(Required) Card ID"
+								}
+							]
+						},
+						"description": "Get card with specified id |\n"
+					},
+					"response": [
+						{
+							"name": "search result matching criteria",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/card/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"card",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "elit",
+											"description": "(Required) Card ID"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"name": "no card found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/card/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"card",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "elit",
+											"description": "(Required) Card ID"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/",
+			"type": "string"
+		}
+	]
+}

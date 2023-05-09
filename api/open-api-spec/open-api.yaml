@@ -1,0 +1,82 @@
+openapi: 3.0.0
+servers: []
+info:
+  description: This is a REST API for credit card validator.
+  version: "1.0.0"
+  title: Credit Card Validator API
+  contact:
+    email: amanpreet.3579@gmail.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+
+paths:
+  /card:
+    get:
+      summary: list all card
+      operationId: listCards
+      description: |
+        Get all valid cards present in the system |
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Card'
+        '404':
+          description: no card found
+    post:
+      summary: adds a credit card
+      operationId: addCard
+      description: Adds a card to the system
+      responses:
+        '201':
+          description: card created
+        '400':
+          description: 'invalid input, object invalid'
+        '409':
+          description: an existing item already exists
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Card'
+        description: Card to add
+  /card/{id}:
+    get:
+      summary: get card by id
+      operationId: getCard
+      description: |
+        Get card with specified id |
+      parameters:
+        - name: id
+          in: path
+          description: Card ID
+          required: true
+          schema:
+            type: string
+            format: string  
+      responses:
+        '200':
+          description: search result matching criteria
+          content:
+            application/json:
+              schema:
+                type: object
+                items:
+                  $ref: '#/components/schemas/Card'
+        '404':
+          description: no card found
+components:
+  schemas:
+    Card:
+      type: object
+      required:
+        - number
+      properties:
+        number:
+          type: string
+          example: 4242424242424242
