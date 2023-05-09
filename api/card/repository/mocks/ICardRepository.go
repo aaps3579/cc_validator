@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	models "github.com/aaps3579/spot-money/api/card/models"
+	models "github.com/aaps3579/cc-validator/api/card/models"
 	mock "github.com/stretchr/testify/mock"
 )
 

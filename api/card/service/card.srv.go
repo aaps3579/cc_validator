@@ -7,13 +7,13 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/aaps3579/spot-money/api/card/repository"
+	"github.com/aaps3579/cc-validator/api/card/repository"
 	"github.com/go-playground/validator/v10"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/gommon/log"
 	"golang.org/x/exp/slices"
 
-	"github.com/aaps3579/spot-money/api/card/models"
+	"github.com/aaps3579/cc-validator/api/card/models"
 	"gorm.io/gorm"
 )
 

@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"github.com/aaps3579/spot-money/api/card/models"
+	"github.com/aaps3579/cc-validator/api/card/models"
 	"gorm.io/gorm"
 )
 

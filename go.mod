@@ -1,4 +1,4 @@
-module github.com/aaps3579/spot-money
+module github.com/aaps3579/cc-validator
 
 go 1.18
 
@@ -7,7 +7,6 @@ require (
 	github.com/getkin/kin-openapi v0.116.0
 	github.com/go-playground/validator/v10 v10.11.1
 	github.com/joho/godotenv v1.5.1
-	github.com/labstack/echo v3.3.10+incompatible
 	github.com/labstack/echo/v4 v4.10.2
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/stretchr/testify v1.8.1

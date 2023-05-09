@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/aaps3579/spot-money/api/card/models"
-	"github.com/aaps3579/spot-money/api/card/repository/mocks"
+	"github.com/aaps3579/cc-validator/api/card/models"
+	"github.com/aaps3579/cc-validator/api/card/repository/mocks"
 	"github.com/labstack/echo/v4"
 	"github.com/stretchr/testify/assert"
 )
