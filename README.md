@@ -8,11 +8,11 @@ For configuration of list of banned countries, use env file with comma separated
 
 # Information
 
-This application exposes a http server with routes to add, list, get cards.
-Cards are added to the system in pending state.
-Cron jobs runs every 5 minute and process 5 cards for country validation.
-Country validation is done through https://lookup.binlist.net/ API.
-If country is banned, card is removed from the database.
+* This application exposes a http server with routes to add, list, get cards.
+* Cards are added to the system in pending state.
+* Cron jobs runs every 5 minute and process 5 cards for country validation.
+* Country validation is done through https://lookup.binlist.net/ API.
+* If country is banned, card is removed from the database.
 
 # RUN
 
